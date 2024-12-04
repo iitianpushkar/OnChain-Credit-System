@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CreditCard, Wallet, ArrowRightLeft, PieChart, Settings } from 'lucide-react'
-import { PublicKey, SystemProgram,LAMPORTS_PER_SOL } from '@solana/web3.js'
+import { PublicKey,LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { useWallet,useConnection,useAnchorWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import "@solana/wallet-adapter-react-ui/styles.css"
@@ -28,7 +28,7 @@ export default function App() {
     if(anchorwallet){
       try 
       {
-          const [pda,bump]=PublicKey.findProgramAddressSync(
+          const [pda,_bump]=PublicKey.findProgramAddressSync(
             [Buffer.from("ackee"),anchorwallet?.publicKey.toBuffer()],programId
           )
         async function pdaexists(){
