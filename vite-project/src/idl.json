@@ -1,0 +1,60 @@
+{
+    "version": "0.1.0",
+    "name": "transfer_sol",
+    "instructions": [
+        {
+            "name": "initialize",
+            "accounts": [
+                {
+                    "name": "pdaAccount1",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "sender",
+                    "isMut": false,
+                    "isSigner": true
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "initializeTransfer",
+            "accounts": [
+                {
+                    "name": "pdaAccount1",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "pdaAccount2",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "sender",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "receiver",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        }
+    ],
+    "errors": [
+        {
+            "code": 6000,
+            "name": "Unauthorized",
+            "msg": "Unauthorized access. Only the authorized public key can initialize the liquidity pool."
+        }
+    ]
+}
